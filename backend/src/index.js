@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors';
-
+import connectDB from './db/index.js';
 
 
 const app = express()
@@ -13,6 +13,22 @@ app.get('/hello', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port http://localhost:${port}`)
-})
+ // this is a old method
+// app.listen(port, () => {
+//   console.log(`Example app listening on port http://localhost:${port}`)
+// })
+
+// now shift to the new method 
+  connectDB()
+  .then(
+    ()=>{
+       app.listen(port, () => {
+   console.log(`Example app listening on port http://localhost:${port}`)
+  })
+    }
+  )
+  .catch(
+    (err)=>{
+     consile.error("mongodb connection is not")
+    }
+  )
