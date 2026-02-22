@@ -3,11 +3,20 @@ import cors from 'cors';
 import connectDB from './db/index.js';
 
 
+
 const app = express()
 const port = 8000
 
 app.use(cors())
 app.use(express.json())
+
+
+
+ import healthRoute from "./routes/healthRoute.js"
+
+ app.use("/api/v1/healthCheck",healthRoute)
+
+
 
 app.get('/hello', (req, res) => {
   res.send('Hello World!')
