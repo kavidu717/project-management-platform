@@ -1,12 +1,17 @@
 import ApiResponse from "../utils/api-response.js";
+import asyncHandler from "../utils/async-handler.js";
+// const helathCheck =async(req,res,next)=>{
+//    try{
+//       const user= await getUserFromDB()
+//       res.status(200).json(
+//         new ApiResponse(200,{message:"server is running"})
+//       )
+//    }catch(error){
+//      next(error)
+//    }
+// }
+const healthCheck=asyncHandler(async(req,res,next)=>{ 
+   res.status(200).json(new ApiResponse(200,{message:"server is still running"}))
+})
 
-const helathCheck =(req,res)=>{
-   try{
-      res.status(200).json(
-        new ApiResponse(200,{message:"server is running"})
-      )
-   }catch(error){
-
-   }
-}
-export{helathCheck}
+export default healthCheck

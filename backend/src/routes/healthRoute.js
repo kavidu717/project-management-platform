@@ -1,10 +1,10 @@
-import {Router} from "express"
-import {helathCheck} from "../controllers/healthController.js" 
+import Router from "express"
+import healthCheck from "../controllers/healthController.js" 
 
 
 const router=Router();
 
-router.route("/").get(helathCheck)
+router.route("/").get(healthCheck)
 
 
 
