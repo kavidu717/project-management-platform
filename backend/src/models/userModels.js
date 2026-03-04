@@ -85,22 +85,17 @@ userSchema.methods.isPasswordCorrect = async function (password) {
 // ✅ access token (MUST return)
 userSchema.methods.generateAccessToken = function () {
   return jwt.sign(
-    {
-      _id: this._id,
-      email: this.email,
-      username: this.username,
-    },
-    process.env.ACCESS_TOKEN_SECRET,
-    { expiresIn: process.env.ACCESS_TOKEN_EXPIRY }
+    { _id: this._id, email: this.email, username: this.username },
+    "super_secret_access_key_123456789",
+    { expiresIn: "15m" }
   );
 };
 
-// ✅ refresh token (MUST return)
 userSchema.methods.generateRefreshToken = function () {
   return jwt.sign(
     { _id: this._id },
-    process.env.REFRESH_TOKEN_SECRET,
-    { expiresIn: process.env.REFRESH_TOKEN_EXPIRY }
+    "super_secret_refresh_key_987654321",
+    { expiresIn: "7d" }
   );
 };
 

@@ -36,10 +36,26 @@ const userRegisterValidator =()=>{
    ]
 
 }
+// write the user login validator
+ const userLoginValidator =()=>{
+     
+    return[
+        body("email")
+        .optional()
+        .isEmail()
+        .withMessage("email is invalid"),
+
+        body("password")
+        .notEmpty()
+        .withMessage("password is required"),
+        
+    ]
+
+ }
 
 
 
-export {userRegisterValidator}
+export {userRegisterValidator,userLoginValidator}
 
 
 
