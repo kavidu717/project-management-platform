@@ -1,5 +1,5 @@
 import { body } from "express-validator";
-
+import { AvailableUserRole } from "../utils/constant.js";
 
 // write the user register validation function here
 
@@ -53,9 +53,42 @@ const userRegisterValidator =()=>{
 
  }
 
+ const createProjectValidator =()=>{
+    return [
+        body("name")
+        
+        .notEmpty()
+        .withMessage("project name is required"),
+
+        body("description")
+        
+        .optional(),
+        
+
+    ]
+ }
+
+ const addMemberToProjectValidator =()=>{
+    return [
+        body("email")
+        .trim()
+        .notEmpty()
+        .withMessage("email is reqired")
+        .isEmail()
+        .withMessage("email is invalid"),
+
+        body("role")
+        .trim()
+        .notEmpty()
+        .withMessage("role is required")
+        .isIn(AvailableUserRole)
+        .withMessage("invalid role")
+    ]
+ }
 
 
-export {userRegisterValidator,userLoginValidator}
+
+export {userRegisterValidator,userLoginValidator,createProjectValidator,addMemberToProjectValidator}
 
 
 

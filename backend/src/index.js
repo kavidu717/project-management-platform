@@ -21,9 +21,11 @@ app.use(cookieParser())
 
  import healthRoute from "./routes/healthRoute.js"
 import authRoute from "./routes/authRoute.js"
-
+import projectRoute from "./routes/projectRoute.js"
+ 
  app.use("/api/v1/healthCheck",healthRoute)
  app.use("/api/v1/auth",authRoute)
+ app.use("/api/v1/projects",projectRoute)
 
 
 

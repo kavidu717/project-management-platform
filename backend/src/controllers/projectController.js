@@ -1,11 +1,11 @@
-import { User } from "../models/userModels"; 
-import { Project } from "../models/projectModels";
-import { ProjectMember } from "../models/projectMembersModels";
-import ApiResponse from "../utils/api-response";
-import ApiError from "../utils/api-error";
-import asyncHandler from "../utils/async-handler";
+import { User } from "../models/userModels.js"; 
+import { Project } from "../models/projectModels.js";
+import { ProjectMember } from "../models/projectMembersModels.js";
+import ApiResponse from "../utils/api-response.js";
+import ApiError from "../utils/api-error.js";
+import asyncHandler from "../utils/async-handler.js";
 import mongoose from "mongoose";
-import { AvailableUserRole } from "../utils/constant";
+import { AvailableUserRole } from "../utils/constant.js";
 
 
 const getProjects=asyncHandler(
@@ -165,7 +165,7 @@ const deleteProjects=asyncHandler(
     }
         
 )
-const addMenbersToProjects=asyncHandler(
+const addMembersToProjects=asyncHandler(
     async(req,res)=>{
        const{email,role} =req.body
        const {projectId}=req.params
@@ -326,7 +326,7 @@ export {
     createProjects,
     updateProjects,
     deleteProjects,
-    addMenbersToProjects,
+    addMembersToProjects,
     getProjectMembers,
     UpdateMemberRole,
     deleteMember
