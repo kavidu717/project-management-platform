@@ -332,7 +332,7 @@ const verifyEmail=asyncHandler(async(req,res)=>{
    })
 
     // write the reset gorgot password function here
-    const reserForgotPassword=asyncHandler(async(req,res)=>{
+    const resetForgotPassword=asyncHandler(async(req,res)=>{
         
          const {resetToken} =req.params
          const {newPassword}=req.body
@@ -396,7 +396,7 @@ export {
     resendEmailVerification,
     refreshAccessToken,
     forgotPasswordRequest,
-    reserForgotPassword,
+    resetForgotPassword,
     changeCurrentPassword
   
 };
