@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import { FiUser, FiMail, FiPhone, FiEdit } from "react-icons/fi";
@@ -25,6 +26,15 @@ export default function Profile() {
                   <FiEdit />
                   Edit Profile
                 </button>
+              </div>
+
+              <div className="mb-6">
+                <Link
+                  to="/change-password"
+                  className="inline-flex items-center rounded-2xl bg-amber-600 px-5 py-3 font-semibold text-white hover:bg-amber-700"
+                >
+                  Change Password
+                </Link>
               </div>
 
               <div className="grid gap-6 md:grid-cols-2">
