@@ -33,6 +33,10 @@ export default function Sidebar() {
         >
           Profile
         </Link>
+
+        <button className="mt-4 rounded-lg bg-red-500 px-4 py-3 text-left font-medium text-white hover:bg-red-600">
+          Logout
+        </button>
       </nav>
     </aside>
   );
