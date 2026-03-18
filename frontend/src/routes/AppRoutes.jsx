@@ -14,12 +14,12 @@ export default function AppRoutes() {
         <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/projects/:id" element={<ProjectDetails />} />
-      <Route path="/tasks" element={<Tasks />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="*" element={<NotFound />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:id" element={<ProjectDetails />} />
+            <Route path="/tasks" element={<Tasks />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     )
 }
